@@ -1,0 +1,45 @@
+<div class="container">
+<div class="text-center">
+    <h1 class="mt-3 mb-3" >Actualizar Paciente</h1>
+    <hr>
+</div>
+
+<form [formGroup]="pacienteFormulario" (ngSubmit)="actualizar()">
+    
+    <div class="row">
+    
+        <div class="col-sm-2" style = "display:none">
+            <label>Id:</label>
+          </div>
+          <div class="col-sm-4" style = "display:none">
+            <input validar type="text" id="idPaciente" name="idPaciente" placeholder="Id" class="form-control"
+            formControlName="idPaciente">
+          </div>
+
+      <div class="col-sm-1">
+        <label>Nombre: </label>
+      </div>
+      <div class="col-sm-5">
+        <input validar type="text" id="nombrePaciente" name="nombrePaciente" placeholder="Ingrese el nombre" class="form-control"
+        formControlName="nombrePaciente">
+      </div>
+  
+      <div class="col-sm-1">
+        <label>Cédula:</label>
+      </div>
+      <div class="col-sm-5">
+        <input validar type="text" id="cedula" name="cedula" placeholder="Ingrese la cedula" class="form-control"
+        formControlName="cedula">
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-5">
+      <button type="submit"  class="btn btn-primary mt-3 mx-1 form-control" [disabled]="pacienteFormulario.invalid">Actualizar</button>
+    </div>
+    <div class="col-sm-5">
+      <button type="button"  class="btn btn-danger mt-3 mx-1 form-control" routerLink="/citas/listar">Cancelar</button>
+    </div>
+
+    </div>
+    </div>
+  </form>
+</div>
