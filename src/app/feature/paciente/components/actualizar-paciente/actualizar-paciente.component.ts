@@ -16,8 +16,7 @@ export class ActualizarPacienteComponent implements OnInit {
   pacienteForm: FormGroup;
   paciente: Paciente = this.pacienteService.pacienteSeleccionado;
 
-  constructor(protected pacienteService: PacienteService,
-    protected router: Router) { }
+  constructor(protected pacienteService: PacienteService, protected router: Router) { }
 
   ngOnInit(): void {
     this.construirFormularioPaciente();

@@ -14,7 +14,7 @@ describe('EliminarPacienteComponent', () => {
   let component: EliminarPacienteComponent;
   let fixture: ComponentFixture<EliminarPacienteComponent>;
   let pacienteService: PacienteService;
-  let paciente: Paciente = new Paciente("Juan", "123");
+  const paciente: Paciente = new Paciente('Juan', '123');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -48,9 +48,9 @@ describe('EliminarPacienteComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Registrando paciente y borrándolo', () => {
+  it('Borrar Paciente', () => {
     expect(component.paciente.idPaciente).toBe(1);
     component.eliminarPaciente(component.paciente.idPaciente);
-    expect(pacienteService.consultar.length == 0);
+    expect(pacienteService.consultar.length === 0);
   });
 });

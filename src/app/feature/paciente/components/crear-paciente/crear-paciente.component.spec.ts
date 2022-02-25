@@ -47,8 +47,8 @@ describe('CrearPacienteComponent', () => {
   it('formulario es invalido cuando esta vacio', () => {
     expect(crearPaciente.pacienteForm.valid).toBeFalsy();
   });
-  
-  it('El servicio no debe tener ningún resgistro al empezar', ()=>{
+
+  it('El servicio no debe tener ningún resgistro al empezar', () => {
     expect(pacienteService.consultar.length).toBe(0);
   });
 

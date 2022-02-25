@@ -5,7 +5,8 @@ export class PacientePage {
     private linkListarPaciente = element(by.id('linkListarPaciente'));
     private inputNombrePaciente = element(by.id('nombrePaciente'));
     private inputCedula = element(by.id('cedula'));
-    private listaPacientes = element.all(by.css('tr.pacientes td'));
+    private listaPacientes = element.all(by.css('tr.pacientes td.nombres'));
+    private btnCrearPaciente = element(by.id('btnCrearPaciente'));
 
     async clickBotonCrearPaciente() {
         await this.linkCrearPaciente.click();
@@ -24,6 +25,10 @@ export class PacientePage {
     }
 
     async contarPacientes() {
-        return this.listaPacientes.count();
+        return await this.listaPacientes.count();
+    }
+
+    async crearPaciente(){
+        await this.btnCrearPaciente.click();
     }
 }

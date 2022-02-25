@@ -13,9 +13,10 @@ import { Router } from '@angular/router';
 export class CrearPacienteComponent implements OnInit {
 
   pacienteForm: FormGroup;
+  mostrarError: boolean;
+  mensajeError: string;
 
-  constructor(protected pacienteService: PacienteService,
-    protected router: Router) { }
+  constructor(protected pacienteService: PacienteService, protected router: Router) { }
 
   ngOnInit(): void {
     this.construirFormularioPaciente();
@@ -23,7 +24,13 @@ export class CrearPacienteComponent implements OnInit {
 
   crear() {
     this.pacienteService.guardar(this.pacienteForm.value)
-    .subscribe(() => this.router.navigateByUrl('/paciente/listar'));
+    .subscribe(() => {this.router.navigateByUrl('/paciente/listar'); }
+    , error => {
+      this.mensajeError = error.error.mensaje;
+      this.mostrarError = true;
+    }
+    );
+    this.mostrarError = false;
   }
 
   private construirFormularioPaciente() {

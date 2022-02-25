@@ -4,11 +4,11 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from '@home/home.component';
-import { ProductoModule } from '@producto/producto.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { PacienteModule } from './feature/paciente/paciente.module';
-
+import { EspecialistaModule } from './feature/especialista/especialista.module';
+import { CitaModule } from './feature/cita/cita.module';
 
 
 
@@ -20,9 +20,10 @@ import { PacienteModule } from './feature/paciente/paciente.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductoModule,
     CoreModule,
-    PacienteModule
+    PacienteModule,
+    EspecialistaModule,
+    CitaModule
   ],
   providers: [CookieService],
     bootstrap: [AppComponent],

@@ -12,9 +12,9 @@ describe('ListarPacienteComponent', () => {
   let component: ListarPacienteComponent;
   let fixture: ComponentFixture<ListarPacienteComponent>;
   let pacienteService: PacienteService;
-  const listaPacientes: Paciente[] = [new Paciente('Juan','123'),
-  new Paciente('Pedro', '456'),
-  new Paciente('Alejandra', '789')];
+  const listaPacientes: Paciente[] = [new Paciente( 'Juan', '123' ),
+  new Paciente( 'Pedro', '456' ),
+  new Paciente( 'Alejandra', '789' )];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -39,7 +39,7 @@ describe('ListarPacienteComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    component.listaPacientes.subscribe(resultado=> {
+    component.listaPacientes.subscribe(resultado => {
       expect(3).toBe(resultado.length);
     });
   });

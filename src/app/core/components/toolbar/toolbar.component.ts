@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
   }
 
   h1 {
-    display: inline;
+    float: center;
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 0.1px;

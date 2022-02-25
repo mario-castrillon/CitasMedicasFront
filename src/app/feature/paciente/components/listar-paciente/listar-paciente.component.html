@@ -12,7 +12,7 @@
       <tbody>
         <tr class="pacientes" *ngFor="let paciente of listaPacientes | async">
           <td class="text-center">{{ paciente.cedula }}</td>
-          <td>{{ paciente.nombrePaciente }}</td>
+          <td class="nombres">{{ paciente.nombrePaciente }}</td>
           <td align="center">
             <button class="btn btn-primary mx-1" (click)="seleccionarPaciente(paciente,'actualizar')"><i
               class="bi bi-pencil"></i></button>

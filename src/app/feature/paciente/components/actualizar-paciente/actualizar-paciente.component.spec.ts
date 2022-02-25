@@ -14,23 +14,22 @@ describe('ActualizarPacienteComponent', () => {
   let component: ActualizarPacienteComponent;
   let fixture: ComponentFixture<ActualizarPacienteComponent>;
   let pacienteService: PacienteService;
-  let pacienteOriginal: Paciente = new Paciente("Juan", "123");
-  //let pacienteActualizado: Paciente = new Paciente("Pedro", "456");
+  const pacienteOriginal: Paciente = new Paciente('Juan', '123');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActualizarPacienteComponent ],
+      declarations: [ActualizarPacienteComponent],
       imports: [
         CommonModule,
         HttpClientModule,
         RouterTestingModule.withRoutes([
-          { path: 'paciente/listar', component: ListarPacienteComponent}]),
+          { path: 'paciente/listar', component: ListarPacienteComponent }]),
         ReactiveFormsModule,
         FormsModule
       ],
       providers: [PacienteService, HttpService],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -51,11 +50,11 @@ describe('ActualizarPacienteComponent', () => {
 
   it('Actualizar paciente', () => {
     pacienteService.pacienteSeleccionado = pacienteOriginal;
-    component.pacienteForm.controls.nombrePaciente.setValue("Pedro");
-    component.pacienteForm.controls.cedula.setValue("951");
+    component.pacienteForm.controls.nombrePaciente.setValue('Pedro');
+    component.pacienteForm.controls.cedula.setValue('951');
     component.pacienteForm.controls.idPaciente.setValue(1);
     component.actualizar();
-    expect(pacienteService.pacienteSeleccionado.nombrePaciente = "Pedro" );
+    expect(pacienteService.pacienteSeleccionado.nombrePaciente = 'Pedro');
   });
 
 });
